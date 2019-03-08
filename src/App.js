@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/')
+    fetch('https://shrouded-refuge-66418.herokuapp.com/')
     .then(resp=>resp.json())
     .then(data=>{
       this.setState({todos: data})
@@ -33,7 +33,7 @@ class App extends Component {
   
   onCompleted = (e,id) => {
     const {checked} = e.target;
-    fetch('http://localhost:3000/complete',{
+    fetch('https://shrouded-refuge-66418.herokuapp.com/complete',{
       headers: {
         'Content-Type': 'application/json'
       },
@@ -64,7 +64,7 @@ class App extends Component {
       isCompleted: false
     };
 
-    fetch('http://localhost:3000/insert', {
+    fetch('https://shrouded-refuge-66418.herokuapp.com/insert', {
       headers: {
         'Content-Type': 'application/json'
       },
@@ -88,7 +88,7 @@ class App extends Component {
   }
 
   getAllTodos = () => {
-    fetch('http://localhost:3000/')
+    fetch('https://shrouded-refuge-66418.herokuapp.com/')
     .then(resp=>resp.json())
     .then(todos=>{
       this.setState({todos: todos})
@@ -96,7 +96,7 @@ class App extends Component {
   }
 
   getTodayTodos = () => {
-    fetch('http://localhost:3000/GetTodays/')
+    fetch('https://shrouded-refuge-66418.herokuapp.com/')
     .then(resp=>resp.json())
     .then(todos=>{
       this.setState({todos: todos})
@@ -104,7 +104,7 @@ class App extends Component {
   }
 
   getUpcomingTodos = () => {
-    fetch('http://localhost:3000/GetUpcomings/')
+    fetch('https://shrouded-refuge-66418.herokuapp.com/')
     .then(resp=>resp.json())
     .then(todos=>{
       this.setState({todos: todos})
@@ -112,7 +112,7 @@ class App extends Component {
   }
 
   getCompletedTodos = () => {
-    fetch('http://localhost:3000/GetCompleted')
+    fetch('https://shrouded-refuge-66418.herokuapp.com/')
     .then(resp=>resp.json())
     .then(todos=>{
       this.setState({todos: todos})
