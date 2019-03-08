@@ -7,8 +7,12 @@ const AddTodo = ({onRouteChange, onAddTodo, onInputChange}) => {
                 <fieldset id="add_todo" className="ba b--transparent ph0 mh0">
                 <legend className="f4 fw6 ph0 mh0">Add Task</legend>
                 <div className="mt3">
-                    <label className="db fw6 lh-copy f6" htmlFor="task-title">Task</label>
-                    <input onChange={onInputChange} className="pa2 mt2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text" name="task-title"  id="task-title" />
+                    <label className="db fw6 lh-copy f6" htmlFor="title">Task</label>
+                    <input onChange={onInputChange} className="pa2 mt2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text" name="title"  id="title" />
+                </div>
+                <div className="mt3">
+                    <label className="db fw6 lh-copy f6" htmlFor="duedate">Due Date</label>
+                    <input onChange={onInputChange} className="pa2 mt2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text" name="duedate"  id="duedate" />
                 </div>
                 
                 </fieldset>

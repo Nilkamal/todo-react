@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import './Todos.css';
 class Todos extends Component {
     
     render() {
@@ -11,10 +11,25 @@ class Todos extends Component {
    
                 {
                     this.props.todoList.map((todo)=>{
+                        console.log(todo);
+                        const completed = todo.iscompleted ? 'completed' : null;
                         return (
+                            
                             <div key={todo.id} className="flex items-center mb2">
-                                <input className="mr2 f3" type="checkbox" id={todo.id} value={todo.title} />
-                                <label htmlFor={todo.id} className="lh-copy f3">{todo.title}</label>
+                                <input 
+                                    className={`mr2 f3`} 
+                                    type="checkbox" 
+                                    checked={todo.iscompleted}
+                                    id={todo.id} 
+                                    value={todo.title} 
+                                    onChange={(e)=>{this.props.onCompleted(e,todo.id)}}
+                                />
+                                <label 
+                                    htmlFor={todo.id} 
+                                    className={`lh-copy f3  ${completed}`}
+                                >
+                                    {todo.title}
+                                </label>
                              </div>
                             )
                     })
