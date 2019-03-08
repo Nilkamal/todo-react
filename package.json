@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "todo-app",
   "version": "0.1.0",
   "private": true,
@@ -6,6 +7,18 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-scripts": "2.1.5",
+=======
+  "name": "face-recognition-brain",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "clarifai": "^2.9.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-particles-js": "^2.4.2",
+    "react-scripts": "2.1.3",
+    "react-tilt": "^0.1.4",
+>>>>>>> 85feb462e0bfa465243804f5cd1da824876c7853
     "tachyons": "^4.11.1"
   },
   "scripts": {

@@ -1,9 +1,21 @@
 .App {
+<<<<<<< HEAD
   
   text-align: center;
   
+=======
+  text-align: center;
+>>>>>>> 85feb462e0bfa465243804f5cd1da824876c7853
 }
 .center {
   display: flex;
   justify-content: center;
 }
+<<<<<<< HEAD
+=======
+.particles{
+  position: fixed;
+  z-index: -1;
+  width:100%;
+}
+>>>>>>> 85feb462e0bfa465243804f5cd1da824876c7853
