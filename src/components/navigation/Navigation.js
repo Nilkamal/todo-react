@@ -2,7 +2,7 @@ import React from 'react';
 
 const Navigation = ({getAllTodos, getTodayTodos, getUpcomingTodos,getCompletedTodos}) => {
     return (
-        <nav className='fl w-third pa2'>
+        <nav className='center'>
             <p 
                 className='f3 dim black link underline pa3 pointer'
                 onClick={getAllTodos}

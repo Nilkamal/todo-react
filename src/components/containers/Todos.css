@@ -1,3 +1,10 @@
 .completed {
     text-decoration: line-through;
 }
+.react-date-picker__wrapper {
+    border:0px !important;
+}
+
+.react-date-picker__inputGroup__input {
+    width:42px;
+}

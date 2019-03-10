@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {
       route: 'home',
       title: '',
-      duedate: '',
+      duedate: new Date(),
       todos:  []
     }
   }
@@ -28,7 +28,13 @@ class App extends Component {
     })
   }
   onInputChange = (e) => {
+    console.log(e);
     this.setState({[e.target.name]: e.target.value});
+  }
+
+  onDueDateChange = (date) => {
+    console.log(date);
+    this.setState({duedate: date});
   }
   
   onCompleted = (e,id) => {
@@ -64,7 +70,8 @@ class App extends Component {
       isCompleted: false
     };
 
-    fetch('https://shrouded-refuge-66418.herokuapp.com/insert', {
+    // fetch('https://shrouded-refuge-66418.herokuapp.com/insert', {
+      fetch('http://localhost:3001/insert', {
       headers: {
         'Content-Type': 'application/json'
       },
@@ -96,7 +103,7 @@ class App extends Component {
   }
 
   getTodayTodos = () => {
-    fetch('https://shrouded-refuge-66418.herokuapp.com/')
+    fetch('https://shrouded-refuge-66418.herokuapp.com/GetTodays')
     .then(resp=>resp.json())
     .then(todos=>{
       this.setState({todos: todos})
@@ -104,7 +111,7 @@ class App extends Component {
   }
 
   getUpcomingTodos = () => {
-    fetch('https://shrouded-refuge-66418.herokuapp.com/')
+    fetch('https://shrouded-refuge-66418.herokuapp.com/GetUpcomings')
     .then(resp=>resp.json())
     .then(todos=>{
       this.setState({todos: todos})
@@ -112,7 +119,7 @@ class App extends Component {
   }
 
   getCompletedTodos = () => {
-    fetch('https://shrouded-refuge-66418.herokuapp.com/')
+    fetch('https://shrouded-refuge-66418.herokuapp.com/GetCompleted')
     .then(resp=>resp.json())
     .then(todos=>{
       this.setState({todos: todos})
@@ -136,13 +143,15 @@ class App extends Component {
               />
               <Todos todoList={this.state.todos} onCompleted={this.onCompleted} />
             </div>
-
+            
           )  : (
             <div>
                 <AddTodo 
                   onRouteChange={this.onRouteChange} 
                   onAddTodo={this.onAddTodo}
                   onInputChange={this.onInputChange}
+                  dueDate={this.state.duedate}
+                  onDueDateChange={this.onDueDateChange}
                 />
             </div>
           )

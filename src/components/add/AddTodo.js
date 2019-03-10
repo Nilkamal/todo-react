@@ -1,6 +1,8 @@
 import React from 'react';
+import DatePicker from 'react-date-picker';
 
-const AddTodo = ({onRouteChange, onAddTodo, onInputChange}) => {
+const AddTodo = ({onRouteChange, onAddTodo, onInputChange, dueDate, onDueDateChange}) => {
+    
     return (
         <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
         <main className="pa4 black-80">
@@ -8,15 +10,22 @@ const AddTodo = ({onRouteChange, onAddTodo, onInputChange}) => {
                 <legend className="f4 fw6 ph0 mh0">Add Task</legend>
                 <div className="mt3">
                     <label className="db fw6 lh-copy f6" htmlFor="title">Task</label>
-                    <input onChange={onInputChange} className="pa2 mt2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text" name="title"  id="title" />
+                    <input onChange={(e)=>{onInputChange(e)}} className="pa2 mt2 input-reset ba bg-transparent hover-bg-white hover-black w-100" type="text" name="title"  id="title" />
                 </div>
                 <div className="mt3">
-                    <label className="db fw6 lh-copy f6" htmlFor="duedate">Due Date</label>
-                    <input onChange={onInputChange} className="pa2 mt2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text" name="duedate"  id="duedate" />
+                    <label className="db fw6 lh-copy f6" htmlFor="dueDate">Due Date</label>
+                    <DatePicker
+                        onChange={(e)=>{onDueDateChange(e)}}
+                        value={dueDate}
+                        name="dueDate"  id="dueDate"
+                        className="pa2 mt2 input-reset ba bg-transparent hover-bg-white  hover-black w-100"
+                    />
+                    {/* <input onChange={onInputChange} className="pa2 mt2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text" name="duedate"  id="duedate" /> */}
                 </div>
                 
                 </fieldset>
                 <div className="">
+                    
                     <input onClick={onAddTodo} className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Create" />
                 </div>
                 <div className="lh-copy mt3">
