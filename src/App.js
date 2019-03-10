@@ -70,8 +70,8 @@ class App extends Component {
       isCompleted: false
     };
 
-    // fetch('https://shrouded-refuge-66418.herokuapp.com/insert', {
-      fetch('http://localhost:3001/insert', {
+    fetch('https://shrouded-refuge-66418.herokuapp.com/insert', {
+      // fetch('http://localhost:3001/insert', {
       headers: {
         'Content-Type': 'application/json'
       },
