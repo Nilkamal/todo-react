@@ -32,8 +32,7 @@ class App extends Component {
     this.setState({[e.target.name]: e.target.value});
   }
 
-  onDueDateChange = (date) => {
-    console.log(date);
+  onDueDateChange = (date) => {console.log(date);
     this.setState({duedate: date});
   }
   
